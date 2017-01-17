@@ -246,10 +246,8 @@ int compress_set_gapless_metadata(struct compress *compress,
  * @codec_options: codec options of compress stream based on codec type
  */
 
-#ifdef USE_VENDOR_EXTN
 int compress_set_next_track_param(struct compress *compress,
 			union snd_codec_options *codec_options);
-#endif
 
 /*
  * is_codec_supported:check if the given codec is supported
@@ -307,15 +305,9 @@ const char *compress_get_error(struct compress *compress);
 /* utility functions */
 unsigned int compress_get_alsa_rate(unsigned int rate);
 
-#ifdef USE_VENDOR_EXTN
 /* set metadata */
 int compress_set_metadata(struct compress *compress,
 	    struct snd_compr_metadata *mdata);
-
-/* get metadata */
-int compress_get_metadata(struct compress *compress,
-	    struct snd_compr_metadata *mdata);
-#endif
 
 #if defined(__cplusplus)
 }
